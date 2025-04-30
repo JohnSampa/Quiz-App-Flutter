@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/quizScreen.dart';
+import 'package:quiz_app/homePage.dart';
 import 'package:quiz_app/themes.dart';
 
 class QuizApp extends StatelessWidget{
@@ -8,9 +8,8 @@ class QuizApp extends StatelessWidget{
     return MaterialApp(
       title: 'Quiz Do John',
       theme: themeQuiz,
-      home: QuizScreen(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
-    
 }
