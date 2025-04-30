@@ -2,7 +2,7 @@ class LogicaQuiz {
 
   final List<Map<String, Object>> questions = [
     {
-      'question': 'Qual acorde NÂO pertence ao campo harmonico de C?',
+      'question': 'Qual acorde NÃO pertence ao campo harmonico de C?',
       'resp':[
         {'option': 'Am7','correta':false},
         {'option': 'G7','correta':false},

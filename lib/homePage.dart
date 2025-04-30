@@ -16,8 +16,15 @@ class HomePage extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+
             Text(
               'Clique no botão para iniciar o Quiz Musical'
+            ),
+
+             Image.asset(
+              'lib/assets/FenderBlue.png',
+              width: 140,
+      
             ),
 
             ElevatedButton(
