@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/homePage.dart';
 import 'package:quiz_app/logicaQuiz.dart';
 import 'package:quiz_app/quizScreen.dart';
 
