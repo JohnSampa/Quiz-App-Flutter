@@ -28,6 +28,24 @@ class LogicaQuiz {
         {'option': 'D  E  F#  G  A  B  C#','correta':true},
       ]
     },
+    {
+      'question': 'Qual o relativo de C?',
+      'resp':[
+        {'option': 'Dm','correta':false},
+        {'option': 'A7M','correta':false},
+        {'option': 'G#m','correta':false},
+        {'option': 'Am','correta':true},
+      ]
+    },
+    {
+      'question': 'Quem criou a guitarra eletrica',
+      'resp':[
+        {'option': 'John Suhr','correta':false},
+        {'option': 'Leo Fender','correta':true},
+        {'option': 'Martin Miller','correta':false},
+        {'option': 'Ciro Guita','correta':false},
+      ]
+    },
   ];
 
   int pergunataAtual = 0;
@@ -35,7 +53,6 @@ class LogicaQuiz {
 
   void corretor(bool resposta){
     if(resposta)acertos++;
-    pergunataAtual++;
   }
 
 }
