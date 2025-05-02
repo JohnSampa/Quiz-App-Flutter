@@ -55,4 +55,9 @@ class LogicaQuiz {
     if(resposta)acertos++;
   }
 
+  void reset(){
+    pergunataAtual = 0;
+    acertos = 0;
+  }
+
 }
