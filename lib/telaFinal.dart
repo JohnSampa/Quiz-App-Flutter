@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/logicaQuiz.dart';
 
 class FinalScreen extends StatelessWidget{
   int acertos = 0;
