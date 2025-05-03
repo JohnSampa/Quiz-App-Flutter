@@ -8,7 +8,7 @@ final themeQuiz = ThemeData(
     color: Colors.blueAccent,
     centerTitle: true,
     titleTextStyle: TextStyle(
-      fontSize: 30,
+      fontSize: 35,
       color: Colors.white,
     )
   ),

@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       
       appBar: AppBar(
-        title: Text('Inicio Quiz Musical'),
+        title: Text('Quiz Musical'),
       ),
 
       body: SizedBox(

@@ -3,6 +3,7 @@ class LogicaQuiz {
   final List<Map<String, Object>> questions = [
     {
       'question': 'Qual acorde NÃO pertence ao campo harmonico de C?',
+      'image':'lib/assets/notas.png',
       'resp':[
         {'option': 'Am7','correta':false},
         {'option': 'G7','correta':false},
@@ -12,6 +13,7 @@ class LogicaQuiz {
     },
     {
       'question': 'Quantas notas tem a escala pentatônica?',
+      'image':'lib/assets/PENTA-MAYOR-C.png',
       'resp':[
         {'option': '3 notas','correta':false},
         {'option': '5 notas','correta':true},
@@ -21,6 +23,7 @@ class LogicaQuiz {
     },
     {
       'question': 'Qual a escala de D?',
+      'image':'lib/assets/NotesD.png',
       'resp':[
         {'option': 'D  E  F#  G#  A# B#  C#','correta':false},
         {'option': 'D  E  F#  G  A  B  C','correta':false},
@@ -30,6 +33,7 @@ class LogicaQuiz {
     },
     {
       'question': 'Qual o relativo de C?',
+      'image':'lib/assets/Guitarrista.png',
       'resp':[
         {'option': 'Dm','correta':false},
         {'option': 'A7M','correta':false},
@@ -38,7 +42,8 @@ class LogicaQuiz {
       ]
     },
     {
-      'question': 'Quem criou a guitarra eletrica',
+      'question': 'Quem criou a guitarra stratocaster',
+      'image':'lib/assets/leo-fender-strat_480x480.png',
       'resp':[
         {'option': 'John Suhr','correta':false},
         {'option': 'Leo Fender','correta':true},

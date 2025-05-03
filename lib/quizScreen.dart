@@ -68,12 +68,12 @@ class _QuizScreenState extends State <QuizScreen> {
       body: SizedBox(
           width: double.infinity,
           height: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
                 decoration: BoxDecoration(
                    color: Colors.blueAccent,
                   borderRadius: BorderRadius.circular(40)
@@ -82,24 +82,24 @@ class _QuizScreenState extends State <QuizScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Questão ${logica.pergunataAtual}',
+                        'Questão ${logica.pergunataAtual + 1}',
                         style: TextStyle(
                           color: Colors.white
                         ),
                         ),
-                    
+                          
                     ],
                   ),
                   SizedBox(
                     width: 100,
-                    height: 70,
+                    height: 60,
                   ),
                   Container(
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(251, 226, 237, 237),
                       borderRadius: BorderRadius.circular(50)
@@ -116,27 +116,32 @@ class _QuizScreenState extends State <QuizScreen> {
                 ],
                           ),
               ),
-            ),
-             Text(
-              logica.questions[logica.pergunataAtual]['question'] as String,
-            ),
-            ...(logica.questions[logica.pergunataAtual]['resp'] 
-                  as List<Map<String, Object>>)
-            .map((option){
-              return ElevatedButton(
-                onPressed: (){
-                  cont = 30;
-                  corretor(option['correta']as bool);
-                  proximaPergunta();
-                },
-                child: Text(
-                  option['option']as String
-                )
-                );
-            }
-            )
-          ],
-        ),
+               Text(
+                logica.questions[logica.pergunataAtual]['question'] as String,
+              ),
+              Image.asset(
+                '${logica.questions[logica.pergunataAtual]['image']}',
+                height: 300,
+              
+              ),
+              ...(logica.questions[logica.pergunataAtual]['resp'] 
+                    as List<Map<String, Object>>)
+              .map((option){
+                return ElevatedButton(
+                  onPressed: (){
+                    cont = 30;
+                    corretor(option['correta']as bool);
+                    proximaPergunta();
+                  },
+                  child: Text(
+                    option['option']as String
+                  )
+                  );
+              }
+              )
+            ],
+                    ),
+          ),
         ),
     );
   }
