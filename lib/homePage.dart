@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget{
              Image.asset(
               'lib/assets/logo.png',
               height: 450,
-      
+              
             ),
 
             ElevatedButton(
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget{
               },
              child: SizedBox(
               height: 100,
-              width: 300,
+              width: 250,
               child: Center(child: Text('Iniciar'))
               )
              )

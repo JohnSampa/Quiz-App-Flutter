@@ -44,7 +44,7 @@ class FinalScreen extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 460,
+                    width: 400,
                     height: 60,
                     decoration: BoxDecoration(
                       color: Colors.blueAccent,

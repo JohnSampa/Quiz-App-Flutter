@@ -136,7 +136,7 @@ class _QuizScreenState extends State <QuizScreen> {
               Image.asset(
                 '${logica.questions[logica.pergunataAtual]['image']}',
                 height: 300,
-              
+
               ),
               ...(logica.questions[logica.pergunataAtual]['resp'] 
                     as List<Map<String, Object>>)
@@ -161,8 +161,10 @@ class _QuizScreenState extends State <QuizScreen> {
                     corretor(option['correta']as bool,index);
                     proximaPergunta();
                   },
-                  child: Text(
-                    option['option']as String
+                  child: Center(
+                    child: Text(
+                      option['option']as String
+                    ),
                   )
                   );
               }

@@ -56,7 +56,7 @@ class LogicaQuiz {
       'image':'lib/assets/acordemeiodiminuto.png',
       'resp':[
         {'option': 'Si meio diminuto','correta':true},
-        {'option': 'Si maior com sétima e quinta almentada','correta':false},
+        {'option': 'Si maior com sétima','correta':false},
         {'option': 'Si maior com sétima e quinta bemol','correta':false},
         {'option': 'Si diminuto','correta':false},
       ]

@@ -18,7 +18,7 @@ final themeQuiz = ThemeData(
       backgroundColor: Colors.blueAccent,
       foregroundColor: Colors.white,
       elevation: 10,
-      minimumSize: Size(280, 60),
+      minimumSize: Size(450, 60),
       textStyle: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
