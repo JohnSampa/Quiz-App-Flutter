@@ -47,6 +47,7 @@ class _QuizScreenState extends State <QuizScreen> {
         setState(() {
         logica.pergunataAtual++;
         indiceBut = null;
+        cont = 30;
         });
     }
     });
@@ -157,7 +158,6 @@ class _QuizScreenState extends State <QuizScreen> {
                     backgroundColor: cor
                   ),
                   onPressed: (){
-                    cont = 30;
                     corretor(option['correta']as bool,index);
                     proximaPergunta();
                   },
