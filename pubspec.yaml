@@ -65,6 +65,13 @@ flutter:
    - lib/assets/PENTA-MAYOR-C.png
    - lib/assets/NotesD.png
    - lib/assets/leo-fender-strat_480x480.png
+   - lib/assets/logo.png
+   - lib/assets/acordemeiodiminuto.png
+   - lib/assets/tempo-esgotado.png
+   - lib/assets/relogio.png
+   - lib/assets/NotasM.png
+   - lib/assets/minor-scale-pattern.png
+   - lib/assets/JimiHendrix.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

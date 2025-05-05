@@ -15,6 +15,7 @@ class _QuizScreenState extends State <QuizScreen> {
   final LogicaQuiz logica = LogicaQuiz();
   Timer?timer;
   int cont = 30;
+  int? indiceBut;
 
   @override
   void initState(){
@@ -24,7 +25,7 @@ class _QuizScreenState extends State <QuizScreen> {
         timer.cancel();
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder:(context)=>FinalScreen(acertos:logica.acertos))
+            MaterialPageRoute(builder:(context)=>FinalScreen(acertos:logica.acertos,timer: cont))
             );
         }else if(mounted){
           setState(() {
@@ -35,22 +36,26 @@ class _QuizScreenState extends State <QuizScreen> {
   }
 
   void proximaPergunta(){
+    Future.delayed(Duration(seconds: 1),(){
     if(logica.pergunataAtual+1== logica.questions.length){
       timer!.cancel();
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder:(context)=>FinalScreen(acertos: logica.acertos))
+        MaterialPageRoute(builder:(context)=>FinalScreen(acertos: logica.acertos,timer: cont))
       );
     }else{
-      setState(() {
+        setState(() {
         logica.pergunataAtual++;
-      });
+        indiceBut = null;
+        });
     }
+    });
   }
 
-  void corretor(bool resposta){
+  void corretor(bool resposta,int index){
     setState(() {
       logica.corretor(resposta);
+      indiceBut = index;
     });
   }
 
@@ -97,21 +102,29 @@ class _QuizScreenState extends State <QuizScreen> {
                     width: 100,
                     height: 60,
                   ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(251, 226, 237, 237),
-                      borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Center(
-                      child:  Text(
-                        '$cont',
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0)
-                          ),
-                    ),
-                    )
+                  Row(
+                    children: [
+                      Image.asset(
+                        'lib/assets/relogio.png',
+                        height: 40,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(251, 226, 237, 237),
+                          borderRadius: BorderRadius.circular(50)
+                        ),
+                        child: Center(
+                          child:  Text(
+                            '$cont',
+                            style: TextStyle(
+                              color: const Color.fromARGB(255, 0, 0, 0)
+                              ),
+                        ),
+                        )
+                      ),
+                    ],
                   ),
                 ],
                           ),
@@ -126,11 +139,26 @@ class _QuizScreenState extends State <QuizScreen> {
               ),
               ...(logica.questions[logica.pergunataAtual]['resp'] 
                     as List<Map<String, Object>>)
-              .map((option){
+              .asMap()
+              .entries
+              .map((questions){
+                int index = questions.key;
+                var option = questions.value;
+                Color cor = Colors.blueAccent;
+
+                if(indiceBut==index){
+                  option['correta']as bool?cor = Colors.green:cor = Colors.red;
+                }else{
+                  cor = Colors.blueAccent; 
+                }
+        
                 return ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: cor
+                  ),
                   onPressed: (){
                     cont = 30;
-                    corretor(option['correta']as bool);
+                    corretor(option['correta']as bool,index);
                     proximaPergunta();
                   },
                   child: Text(

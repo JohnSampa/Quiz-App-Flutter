@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/homePage.dart';
 import 'package:quiz_app/logicaQuiz.dart';
-import 'package:quiz_app/quizScreen.dart';
 
 class FinalScreen extends StatelessWidget{
   int acertos = 0;
+  int timer = 0;
 
-  FinalScreen({super.key, required this.acertos});
+  FinalScreen({super.key, required this.acertos,required this.timer});
 
   LogicaQuiz logica = LogicaQuiz();
 
   void reset (){
     logica.reset();
+  }
+
+   Color corText(int acertos){
+    if(acertos<5){
+      return const Color.fromARGB(255, 255, 17, 0);
+    }else if(acertos>=5 && acertos<8){
+      return const Color.fromARGB(255, 253, 229, 15);
+    }else{
+      return Colors.green;
+    }
   }
 
   @override
@@ -42,7 +52,7 @@ class FinalScreen extends StatelessWidget{
                     ),
                     child: Center(
                       child: Text(
-                        'Porcentagem de acertos',
+                        timer==0?'Seu tempo acabou':'Porcentagem de acertos',
                         style: TextStyle(
                           fontSize: 27,
                           color: Colors.white,
@@ -52,24 +62,38 @@ class FinalScreen extends StatelessWidget{
                   ),
                 ],
               ),
-              Container(
-                height: 300,
-                width: 350,
+
+              timer!=0?Container(
+                height: 400,
+                width: 400,
                 decoration: BoxDecoration(
-                  color: Colors.blueAccent,
+                  color: corText(acertos),
                   borderRadius: BorderRadius.circular(60)
                 ),
                 child: Center(
                   child: Text(
                     '$porcentagem%',
                     style: TextStyle(
-                      fontSize: 100,
-                      color: const Color.fromARGB(255, 103, 236, 107)
+                      fontSize: 150,
+                      color: Colors.white,
                     ),
                   ),
                 ),
+              ):Container(
+                height: 400,
+                width: 400,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 17, 0),
+                  borderRadius: BorderRadius.circular(100)
+                ),
+                child: Center(
+                  child: Image.asset(
+                   'lib/assets/tempo-esgotado.png',
+                   height: 250,
+                  ),
+                ),
               ),
-              SizedBox(height: 90,),
+            
               ElevatedButton(
                 onPressed: (){
                   reset();
@@ -78,8 +102,17 @@ class FinalScreen extends StatelessWidget{
                     MaterialPageRoute(builder: (context)=>HomePage())
                     );
                 },
-                 child: Text(
-                  'Resetar Quiz'
+                 child: SizedBox(
+                  height: 100,
+                  width: 250,
+                   child: Center(
+                     child: Text(
+                      'Resetar Quiz',
+                      style: TextStyle(
+                        fontSize: 26
+                      ),
+                     ),
+                   ),
                  )
                  )
             ],

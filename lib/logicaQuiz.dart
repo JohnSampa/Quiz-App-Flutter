@@ -42,13 +42,63 @@ class LogicaQuiz {
       ]
     },
     {
-      'question': 'Quem criou a guitarra stratocaster',
+      'question': 'Quem criou a guitarra stratocaster?',
       'image':'lib/assets/leo-fender-strat_480x480.png',
       'resp':[
         {'option': 'John Suhr','correta':false},
         {'option': 'Leo Fender','correta':true},
         {'option': 'Martin Miller','correta':false},
-        {'option': 'Ciro Guita','correta':false},
+        {'option': 'John Mayer','correta':false},
+      ]
+    },
+    {
+      'question': 'Como se lê o acorde Bm7♭5?',
+      'image':'lib/assets/acordemeiodiminuto.png',
+      'resp':[
+        {'option': 'Si meio diminuto','correta':true},
+        {'option': 'Si maior com sétima e quinta almentada','correta':false},
+        {'option': 'Si maior com sétima e quinta bemol','correta':false},
+        {'option': 'Si diminuto','correta':false},
+      ]
+    },
+     {
+      'question': 'Qual a quinta aumentada de A?',
+      'image':'lib/assets/notas.png',
+      'resp':[
+        {'option': 'F','correta':false},
+        {'option': 'G','correta':false},
+        {'option': 'E#','correta':true},
+        {'option': 'E','correta':false},
+      ]
+    },
+    {
+      'question': 'Qual intervalo existe entre as notas C e E?',
+      'image':'lib/assets/NotasM.png',
+      'resp':[
+        {'option': 'Terça maior','correta':true},
+        {'option': 'Terça menor','correta':false},
+        {'option': 'Segunda maior','correta':false},
+        {'option': 'Quarta justa','correta':false},
+      ]
+    },
+    {
+      'question': 'Quem é o famoso guitarrista da foto?',
+      'image':'lib/assets/JimiHendrix.jpg',
+      'resp':[
+        {'option': 'Jimi Hendrix','correta':true},
+        {'option': 'Jimmy Page','correta':false},
+        {'option': 'David Gilmour','correta':false},
+        {'option': 'Steve Vai','correta':false},
+      ]
+    },
+    {
+      'question': 'Qual a estrutura intervalar de um acorde menor?',
+      'image':'lib/assets/minor-scale-pattern.png',
+      'resp':[
+        {'option': 'T - 3 - 5j','correta':false},
+        {'option': 'T - 2m - 5j','correta':false},
+        {'option': 'T - 3m - 5j','correta':true},
+        {'option': 'T - 3m - 4j','correta':false},
       ]
     },
   ];

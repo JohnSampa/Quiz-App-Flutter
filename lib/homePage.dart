@@ -22,19 +22,29 @@ class HomePage extends StatelessWidget{
             ),
 
              Image.asset(
-              'lib/assets/FenderBlue.png',
-              width: 140,
+              'lib/assets/logo.png',
+              height: 450,
       
             ),
 
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)
+                )
+              ),
               onPressed: (){
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder:(context)=> QuizScreen())
                   );
               },
-             child: Text('Iniciar')
+             child: SizedBox(
+              height: 100,
+              width: 300,
+              child: Center(child: Text('Iniciar'))
+              )
              )
 
           ],

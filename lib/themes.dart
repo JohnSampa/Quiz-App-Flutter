@@ -20,14 +20,15 @@ final themeQuiz = ThemeData(
       elevation: 10,
       minimumSize: Size(280, 60),
       textStyle: TextStyle(
-        fontSize: 16,
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
       ),
     ),
   ),
 
   textTheme: TextTheme(
     bodyMedium: TextStyle(
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: FontWeight.bold,
       color: Colors.black,
     )
